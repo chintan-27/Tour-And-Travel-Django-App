@@ -1,0 +1,266 @@
+html,body{
+  font-family: 'Viga';
+}
+.nav{
+  position: absolute;
+  font-family: 'Viga';
+  transform: translateY(-1020px);
+  margin-left: 60%;
+}
+.nav-link{
+  color: #fff;
+}
+.main{
+  font-family: sans-serif;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right,#9c27b0,#8ecdff);
+
+}
+.title{
+  position:absolute;
+  color: #000;
+  font-family: 'Viga';
+  margin-left: 50px;
+  letter-spacing: 5px;
+  word-spacing: 5px;
+}
+.logo{
+  position: absolute;
+  height: 50px;
+  width: 50px;
+}
+.top{
+  margin-left: 150px;
+  transform: translateX(200px)  translateY(200px);
+  margin-top: 50px;
+}
+#circle{
+  width: 1000px;
+  height: 1000px;
+  border-radius: 50%;
+  transform: translateX(-200px)  translateY(-200px);
+}
+.feature{
+  position: absolute;
+  font-family: 'Viga';
+  padding: 5px;
+  border-radius: 20%;
+  width: 375px;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.feature ion-icon{
+  width: 50px;
+  height: 50px;
+  padding: 15px;
+}
+
+.feature h5{
+  font-size: 50px;
+}
+.one{
+  transform: translateX(900px)  translateY(300px) rotateZ(0deg);
+  height: 175px;
+}
+.two{
+  transform: translateX(1300px)  translateY(300px) rotateZ(0deg);
+}
+.three{
+  transform: translateX(900px)  translateY(500px) rotateZ(0deg);
+}
+.four{
+  transform: translateX(1300px)  translateY(500px) rotateZ(0deg);
+}
+
+.image{
+  width: 500px;
+  height: 500px;
+  transform: translateX(250px)  translateY(200px);
+  position: absolute;
+}
+#triangle-left {
+  position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 700px solid #ccc;
+    border-right: 550px solid transparent;
+    transform: translateX(175px)  translateY(-200px);
+    border-bottom: 700px solid #ccc;
+    border-left: 500px solid #ccc;
+  }
+  .f-title{
+    color: #512b58;
+    font-family: 'Spicy Rice',sans-serif;
+    margin-left: 35%;
+    margin-top: 50px;
+  }
+.f-title::after{
+  content: " ";
+  position: absolute;
+  border: 2px solid #512b58;
+  border: 20%;
+  width: 70px;
+  transform: translateY(100px) translateX(-170px);
+}
+  .main-one{
+    font-family: sans-serif;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right,#2a7886,#79bac1,#2a7886);
+  }
+
+  .f-para{
+    font-family: 'Viga', cursive;
+    margin-top: 30px;
+    color: #512b58;
+  }
+/* .btn{
+  color: white;
+  border-radius: 50%;
+  border: 1px solid white;
+  transition: 0.5s;
+  margin: 10px;
+  transform: rotateZ(-90deg);
+}
+
+.btn:hover{
+  border: 1px solid white;
+  transform: translateX(-6px) translateY(6px) rotateZ(-90deg);
+  color: white;
+  box-shadow: 2px 2px white,4px 4px white;
+} */
+.f-img{
+  transform: rotateZ(10deg);
+}
+.f-btn{
+  position: absolute;
+  margin-left: 31%;
+  border: none;
+}
+/* .f-btn ion-icon{
+  margin-left: 10px;
+  margin-top: 10px;
+  transform: translateY(3px);
+  transition: 2s;
+}
+.f-back{
+  position: absolute;
+  transform: translateY(26px) translateX(-30px);
+  height: 0px;
+  width: 0px;
+  opacity: 0;
+  border-radius: 50%;
+  background: transparent;
+  border: 3px solid #005082;
+  transition: 2s;
+}
+
+.f-btn:hover,.f-btn:active,f-btn:visited{
+  text-decoration: none;
+  border: none;
+  color: white;
+}
+.f-btn:hover .f-back,
+.f-btn:active .f-back{
+  transform: translateY(-3px) translateX(-30px);
+  height: 60px;
+  width: 200px;
+  opacity: 1;
+  border-radius: 10px;
+}
+.f-btn:hover ion-icon,
+.f-btn:active ion-icon{
+  transform: translateY(3px) translateX(60px);
+} */
+.click{
+  animation-name: fly;
+  animation-duration: 10s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  transform: linear;
+
+}
+@keyframes fly {
+  0%   {transform: translateX(0px) rotateZ(10deg);}
+100% {transform: translateX(1580px) rotateZ(-10deg) translateY(-300px);}
+}
+.main-two {
+  font-family: sans-serif;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right,#ffe75e,#feb72b,#527318);
+}
+.h-img-one{
+  height: 300px;
+  width: 600px;
+  position: absolute;
+  transform: translateX(200px) translateY(50px);
+}
+.h-img-two{
+  height: 300px;
+  position: absolute;
+  transform: translateX(-20px) translateY(50px);
+  width: 300px;
+}
+.h-img-three{
+  position: absolute;
+  height: 300px;
+  width: 300px;
+  transform: translateX(700px) translateY(50px);
+}
+.h-img-four{
+  position: absolute;
+  height: 300px;
+  width: 600px;
+  transform: translateX(900px) translateY(50px);
+}
+.h-para{
+  font-family: 'Viga', cursive;
+  margin-top: 30px;
+  color: #527318;
+}
+.h-title{
+  color: #527318;
+  font-family: 'Spicy Rice',sans-serif;
+  margin-left: 35%;
+  margin-top: 50px;
+}
+.h-title::after{
+content: " ";
+position: absolute;
+border: 2px solid #527318;
+border: 20%;
+width: 70px;
+transform: translateY(100px) translateX(-150px);
+}
+
+.h-btn{
+  margin-left: 41%;
+}
+.footer{
+  width: 100%;
+  height: 50vh;
+  background: #010a43;
+}
+
+.footer-title{
+  color: #333B68;
+}
+.footer-para{
+  color: #333B68;
+}
+
+.copy{
+  margin-left: 30%;
+}

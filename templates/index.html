@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+{% load static %}
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static "css/styleone.css" %}">
+  <link rel="stylesheet" href="{% static "css/style.css" %}">
+  <link href="https://fonts.googleapis.com/css?family=Spicy+Rice&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Viga&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+    {% block content %}
+    <div class="main">
+      <div id="circle">
+
+        <div id="triangle-left">
+
+        </div>
+        <div class="top">
+          <img class="logo" src="{% static "img/logo.png" %}" alt="">
+          <h1 class="title"><b>TRAVEL TRIP</b></h1>
+        </div>
+        <a href="{% url 'package' %}">
+        <div id="one"class="feature one shadow-lg p-2 rounded">
+            <h5><ion-icon name="pricetags-sharp"></ion-icon>PACKAGES</h5>
+            <p>Get customized packages as per your convinence</p>
+        </div></a>
+        <a href="{% url 'flights' %}">
+        <div id="two"class="feature two shadow-lg p-3 rounded">
+            <h5><ion-icon name="airplane-sharp"></ion-icon>FLIGHTS</h5>
+            <p>Get exciting deals on flights</p>
+        </div></a>
+        <a href="{% url 'hotels' %}">
+        <div id="three"class="feature three shadow-lg p-3 rounded">
+            <h5><ion-icon name="bed-sharp"></ion-icon>HOTELS</h5>
+            <p>Get exciting deals on hotels</p>
+        </div></a>
+        <a href="{% url 'places' %}">
+        <div id="four" class="feature four shadow-lg p-3 rounded">
+          <h5><ion-icon name="chatbox-ellipses-sharp"></ion-icon>PLACES</h5>
+          <p>Famous places and weekend getaways</p>
+        </div></a>
+        <img src="{% static "img/travel.png" %}" class="image"alt="">
+      </div>
+      <nav class="navbar sticky-top" style="background:none">
+        <ul class="nav">
+          {% if user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'logout' %}">LOGOUT</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'package' %}">PACKAGES</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'flights' %}">FLIGHTS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'hotels' %}">HOTELS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'dashboard' %}">DASHBOARD</a>
+        </li>
+             {% else %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'login_url' %}">LOGIN</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'register_url' %}">REGISTER</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'package' %}">PACKAGES</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'flights' %}">FLIGHTS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'hotels' %}">HOTELS</a>
+        </li>
+      </ul>
+      {% endif %}
+    </nav>
+</div>
+<div class="main-one">
+  <div class="container">
+    <h1 class="display-4 f-title">F L I G H T S</h1><br><br>
+    <p class="f-para">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <br>  <a href="{% url 'flights' %}" class="f-btn btn btn-primary">F L Y ! !</a><br>
+
+  </div>
+
+  <img src="{% static "img/plane.png" %}" class="f-img click" alt="">
+
+</div>
+<div class="main-two">
+  <div class="container">
+    <h1 class="display-4 h-title">H O T E L S</h1><br><br>
+    <p class="h-para">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <br> <div class="button-one">
+
+     <a href="{% url 'hotels' %}" class="h-btn btn btn-primary">B O O K</a><br>
+</div>
+  </div>
+
+  <img src="{% static "img/hotel1.png" %}" class="h-img-one h-imgs" alt="">
+  <img src="{% static "img/hotel2.png" %}" class="h-img-two h-imgs" alt="">
+  <img src="{% static "img/hotel3.png" %}" class="h-img-three h-imgs" alt="">
+  <img src="{% static "img/hotel4.png" %}" class="h-img-four h-imgs" alt="">
+
+</div>
+<div class="footer">
+  <div class="container">
+    <br><br>
+  <h2 class="footer-title">About Us</h2>
+  <p class="footer-para">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <br><br><p class="footer-para copy">Copyright <ion-icon name="at-circle-outline"></ion-icon> traveltrip.org</p>
+  </div>
+</div>
+  {% endblock %}
+<script type="text/javascript">
+function delay (URL) {
+  setTimeout( function() { window.location = URL }, 3000 );
+}
+</script>
+<script type="text/javascript">
+  function ani(){
+    document.getElementById('img').className ='click';
+  }
+</script>
+  <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body> -->
+</html>

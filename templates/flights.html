@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+{% load static %}
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Spicy+Rice&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "css/styleone.css" %}">
+  </head>
+  <body>
+    {% block content %}
+    <div class="fd">
+      <br><br><br>
+    <div class="container form">
+      <h1 class=" r">SEARCH FLIGHTS</h1>
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 shadow-lg p-3 mb-5 bg-white rounded">
+      <form class="form-group" action="" method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button class="btn btn-primary">SEARCH</button>
+      </form></div>
+      <div class="col-md-3"></div>
+    </div>
+    </div>
+
+    </div>
+    <div class="main">
+      <br><br>
+    {% for i in Flights %}
+
+    <div class="container">
+      <a href='/bookflight/{{ i.flight_num }}/{{ date }}' class="bg">
+        <h1 class="hhh">BOOK</h1>
+      <div class="ticket shadow-lg p-3 mb-5">
+        <div class="row bg1">
+          <h3>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ i.company }}-</h3><h4>{{i.flight_num}}</h4>
+        </div>
+        <div class="row bg1">
+        <p class="from">FROM: <br>{{ i.source }} </p>
+        <p class="to">TO:<br>{{i.destination}}</p>
+        <p class="dept">DEPT TIME:<br> {{ i.dept_time}}</p>
+        <p class="dest">DEST TIME: <br>{{ i.dest_time}}</p>
+        <p class="eprice">{{ i.eprice}}*</p>
+        </div>
+      </div></a>
+    </div>
+    {% endfor %}
+  </div>
+    
+    {% endblock %}
+  </body>
+</html>

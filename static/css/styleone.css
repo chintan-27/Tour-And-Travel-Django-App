@@ -1,0 +1,264 @@
+.fs-form{}
+  .fd{
+    height: 100vh;
+    width: 100%;
+    background: #fafba4;
+  }
+.btn{
+  margin-left: 45%;
+}
+.ticket{
+  height: 300px;
+}
+.from{
+  position: absolute;
+  transform: translateY(160px) translateX(40px);
+}
+.to{
+  position: absolute;
+  transform: translateY(160px) translateX(300px);
+}
+.dept{
+  position: absolute;
+  transform: translateY(80px) translateX(40px);
+}
+.dest{
+  position: absolute;
+  transform: translateY(80px) translateX(300px);
+}
+.bg1{
+  text-decoration: none;
+  border: none;
+  background: linear-gradient(to right,#61d4b3,#192965);
+  color: #000;
+}
+.bg{
+  overflow: hidden;
+}
+.bg:hover,.bg:active{
+  text-decoration: none;
+}
+.bg:hover .hhh,.bg:active .hhh{
+    opacity: 0.5;
+    letter-spacing: -20px;
+    transform: translateY(0px) translateX(80px);
+
+}
+.eprice{
+  position: absolute;
+  transform: translateX(650px) translateY(80px);
+  font-size: 100px;
+}
+.t{
+  font-family: 'Spicy Rice';
+  font-size: 100px;
+  margin-left: 34%;
+  letter-spacing: 10px;
+}
+.tr{
+  font-family: 'Spicy Rice';
+  font-size: 100px;
+  margin-left: 27%;
+  letter-spacing: 10px;
+}
+.trr{
+  font-family: 'Spicy Rice';
+  font-size: 100px;
+  margin-left: 37%;
+  letter-spacing: 10px;
+}
+.r{
+  font-family: 'Spicy Rice';
+  font-size: 50px;
+  margin-left: 28%;
+  letter-spacing: 10px;
+  margin-bottom: 20px;
+}
+.hhh{
+  position: absolute;
+  font-family: 'Fredoka One';
+    opacity: 0;
+    font-size: 300px;
+    letter-spacing: 10000px;
+    transform: translateY(-30px) translateX(-10800px);
+    transition: 1s ease;
+}
+.hf{
+  background-color: #beebe9;
+  height: 100vh;
+  width: 100%;
+}
+.down{
+  transform: translateY(80px);
+}
+.h-img{
+  width: 100%;
+  height: 220px;
+border: 3px solid green;
+ border-radius: 10px;
+}
+
+.h-name{
+  position: absolute;
+  font-size: 30px;
+  font-family: 'Fredoka One';
+  color: green;
+}
+.h-add{
+  position: absolute;
+  transform: translateY(40px) ;
+  font-family: 'Fredoka One';
+
+}
+
+.h-price{
+  position: absolute;
+  font-family: 'Fredoka One';
+  font-size: 60px;
+  transform: translateY(130px);
+}
+
+.h-pricex{
+  position: absolute;
+  font-family: 'Fredoka One';
+  font-size: 30px;
+  transform: translateY(160px) translateX(300px);
+}
+
+.h-am{
+  width: 200px;
+  font-size: 12px;
+  font-family: 'Fredoka One';
+  transform: translateY(80px) translateX(500px);
+  height: 150px;
+}
+.h-rate{
+  position: absolute;
+  transform: translateX(570px) translateY(-170px);
+  font-size: 25px;
+  width: 225px;
+  height: 25px;
+  align-content: flex-end;
+  color: green;
+}
+
+.fff{
+  position: absolute;
+  opacity: 0;
+  font-size: 210px;
+  transform: translateX(-4540px) translateY(-300px);
+  letter-spacing: 1000px;
+  color: green;
+  transition: 1s ease;
+  font-family: 'Fredoka One';
+}
+.ht{
+  color: black;
+}
+.ht:active ,.ht:hover{
+  color: black;
+  text-decoration: none;
+}
+.ht:active .h-am,.ht:hover .h-am{
+  text-decoration: none;
+}
+.ht:active .fff,.ht:hover .fff
+{
+  transform: translateX(500px) translateY(-300px);
+  letter-spacing: 0px;
+  opacity: 0.8;
+}
+.p-img{
+  width: 100%;
+    height: 100%;
+}
+.p-box{
+  /* transform: translateX(300px); */
+  background: linear-gradient(to right,#fffdf9,#b7472a);
+}
+.desc{
+  font-family: 'Fredoka One';
+  background: linear-gradient(to right,#ffb99a,#ff6464);
+  color: #851d41 ;
+  z-index: 0;
+}
+.fly{
+  position: absolute;
+  font-family: 'Fredoka One';
+  font-size: 200px;
+  transform: translateX(-3500px);
+  opacity: 0;
+  transition: 6s ease;
+}
+.fly-box:hover .fly{
+  color: red;
+  transform: translateX(1500px);
+  opacity: 0.8;
+  z-index: 9;
+}
+
+.fp{
+  height: 100vh;
+  width: 100%;
+}
+.fot{
+  font-size: 30px;
+}
+.fo{
+  position: absolute;
+  font-family: 'Viga';
+  transform: translateX(300px);
+  width: auto;
+}
+.hot{
+  font-size: 30px;
+}
+.ho{
+  position: absolute;
+  transform: translateX(900px);
+  font-family: 'Viga';
+  width: auto;
+}
+.seatrem{
+  position: absolute;
+  font-size: 30px;
+  margin-left: 30%;
+}
+.hhhh{
+  position: absolute;
+  font-family: 'Fredoka One';
+    font-size: 250px;
+    color: red;
+    opacity: 0.7;
+    transform: translateY(5px) translateX(30px);
+    transition: 1s ease;
+}
+.bg2{
+  text-decoration: none;
+  border: none;
+  background: linear-gradient(to right,#ffb99a,#ff6464,#db3056);
+  color: #000;
+}
+.roomrem{
+  position: absolute;
+  font-family: 'Fredoka One';
+  transform: translateY(100px);
+  font-size: 30px;
+  color: green;
+}
+.roomremu{
+  position: absolute;
+  font-family: 'Fredoka One';
+  transform: translateY(100px);
+  font-size: 30px;
+  color: red;
+}
+.fffu{
+  position: absolute;
+  opacity: 0.7;
+  font-size: 150px;
+  transform: translateX(400px) translateY(30px);
+  color: red;
+  transition: 1s ease;
+  font-family: 'Fredoka One';
+}

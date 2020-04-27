@@ -1,0 +1,34 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="v">
+  <div class="container"><br><br>
+    <h1 class="ht"> CREATE NEW ACCOUNT</h1><br><br>
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="form col-md-6 p-3 shadow-lg bg-light">
+        <form class="form-group" method="POST">
+          {% csrf_token %}
+          {{form.as_p}}
+        <button class="btn btn-primary"> REGISTER</button>
+        </form>
+      </div>
+    <div class="col-md-3"></div>
+    </div>
+  </div>
+  <br><br><br>
+</div>
+
+<style >
+  .btn{
+    margin-left:200px;
+  }
+  .ht{
+    font-family:'Viga';
+    margin-left:30%;
+  }
+  .v{
+    background:linear-gradient(to right,#ffd3b6,#a8e6cf,#dcedc1);
+  }
+</style>
+
+{% endblock %}

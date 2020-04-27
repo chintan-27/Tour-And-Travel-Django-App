@@ -1,0 +1,45 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="fd">
+  <br><br><br><br><br>
+<div class="container form">
+  <h1 class="tr">PACKAGES</h1>
+  <br><br>
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 shadow-lg p-3 mb-5 bg-white rounded">
+  <form class="form-group" action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button class="btn btn-primary">SEARCH</button>
+  </form></div>
+  <div class="col-md-3"></div>
+</div>
+</div>
+</div><br><br>
+<h2 class="trr">Places</h2>
+<div class="container">
+{% for k in Famplace %}
+<!-- <tr>
+  <td width="200"><center><img src="/media/{{ k.image }}" alt="image"></center></td>
+  <td width="150" height="100"><center>{{ k.city }}</center></td>
+  <td width="200"><center>{{k.place_name}}</center></td>
+  <td width="200"><center>{{k.desc}}</center></td>
+</tr> -->
+<div class="row mt-5 mb-5 fly-box">
+  <div class="col-md-1"></div>
+  <div class="col-md-4 shadow-lg p-3 rounded p-box">
+    <img class="p-img" src="/media/{{ k.image }}" alt="image">
+  </div>
+  <div class="col-md-6 shadow-lg p-3 desc rounded">
+    <h2>{{k.place_name}}</h2>
+    <p>{{k.desc}}</p>
+  </div>
+  <h1 class="fly">{{k.place_name}}</h1>
+</div>
+
+{% endfor %}
+</div>
+
+{% endblock %}

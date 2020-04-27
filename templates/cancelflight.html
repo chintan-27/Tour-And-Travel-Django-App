@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+{% block content %}
+<br><br><br>
+<center>
+<div class="container">
+  <h1>Cancel this flight booking ...?</h1>
+</div></center><br><br>
+{% for i in Flight %}
+<div class="container">
+  <div class="ticket shadow-lg p-3 mb-5">
+    <div class="row bg1">
+      <h3>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ i.company }}-</h3><h4>{{i.flight_num}}</h4>
+    </div>
+    <div class="row bg1">
+      <p class="seatrem">Seats: {{seat}}</p>
+    <p class="from">FROM: <br>{{ i.source }} </p>
+    <p class="to">TO:<br>{{i.destination}}</p>
+    <p class="dept">DEPT TIME:<br> {{ i.dept_time}}</p>
+    <p class="dest">DEST TIME: <br>{{ i.dest_time}}</p>
+    <p class="eprice">{{price}}*</p>
+    </div>
+  </div>
+</div>
+<br><br>
+<a href="/concanflight/{{ i.flight_num }}/{{ date }}/{{ seat }}" class="btn btn-primary">C A N C E L</a>
+{% endfor %}
+{% endblock %}

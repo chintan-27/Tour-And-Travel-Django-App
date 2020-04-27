@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+{% load static %}
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Spicy+Rice&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "css/styleone.css" %}">
+  </head>
+  <body>
+    <br><br><br>
+    <div class="fh">
+    <div class="container form">
+      <h1 class="tr"></h1>
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 shadow-lg p-3 mb-5 bg-white rounded">
+      <form class="form-group" action="" method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button class="btn btn-primary">SEARCH</button>
+      </form></div>
+      <div class="col-md-3"></div>
+    </div>
+    </div>
+    {% block content %}
+    {% for i in hotel %}
+    <div class="hotel">
+      <div class="container">
+        {% ifequal availability "available" %}
+        <a class="ht" href='/userhotel/{{ i.hotel_name }}/{{ date }}/{{ roomreq }}'>
+        <div class="row shadow-lg p-3 mt-5 mb-5 rounded">
+          <div class="col-md-4 ">
+            <img class="h-img shadow-lg" src="/media/{{ i.image1 }}" alt="image">
+          </div>
+          <div class="col-md-8">
+            <p class="roomrem">Available Rooms: {{ roomrem }}</p>
+            <p class="h-name">{{i.hotel_name}}</p>
+            <p class="h-add">{{i.hotel_address}}.<br>{{ i.distfromap }} KM from nearest airport.</p>
+            <p class="h-price">{{ price }}*</p>
+            <p class="h-pricex">/night</p>
+            <p class="h-am">{{ i.amenities}}</p>
+            <div class="h-rate">
+            {% with ''|center:i.hotel_rating as range %}
+              {% for _ in range %}
+                  ★
+              {% endfor %}
+            {% endwith %}
+            </div>
+          </div>
+        </div>
+        <h1 class="fff">BOOK</h1>
+        </a>
+        {% endifequal %}
+        {% ifequal availability "unavailable" %}
+        <h1 class="fffu">BOOKED</h1>
+        <div class="row shadow-lg p-3 mt-5 mb-5 rounded">
+          <div class="col-md-4 ">
+            <img class="h-img shadow-lg" src="/media/{{ i.image1 }}" alt="image">
+          </div>
+          <div class="col-md-8">
+            <p class="roomremu">Available Rooms: {{ roomrem }}</p>
+            <p class="h-name">{{i.hotel_name}}</p>
+            <p class="h-add">{{i.hotel_address}}.<br>{{ i.distfromap }} KM from nearest airport.</p>
+            <p class="h-price">{{ price }}*</p>
+            <p class="h-pricex">/night</p>
+            <p class="h-am">{{ i.amenities}}</p>
+            <div class="h-rate">
+            {% with ''|center:i.hotel_rating as range %}
+              {% for _ in range %}
+                  ★
+              {% endfor %}
+            {% endwith %}
+            </div>
+          </div>
+        </div>
+        {% endifequal %}
+      </div>
+      </div>
+
+    {% endfor %}
+<br>
+<a href="{{request.META.HTTP_REFERER}}" class="btn btn-primary">Go back</a>
+{% endblock %}
+<!-- <a href="/userhotel/{{ i.hotel_name }}/{{ date }}">Confirm</a> -->

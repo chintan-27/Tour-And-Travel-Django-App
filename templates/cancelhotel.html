@@ -1,0 +1,34 @@
+{% extends 'index.html' %}
+{% block content %}
+<br><br><br>
+<center>
+<div class="container">
+  <h1>Cancel this Hotel booking ...?</h1>
+</div></center><br><br>
+{% for i in Hotel %}
+<div class="hotel">
+  <div class="container">
+    <div class="row shadow-lg p-3 mt-5 mb-5 rounded">
+      <div class="col-md-4 ">
+        <img class="h-img shadow-lg" src="/media/{{ i.image1 }}" alt="image">
+      </div>
+      <div class="col-md-8">
+        <p class="roomrem">Booked Rooms:{{ room }}</p>
+        <p class="h-name">{{i.hotel_name}}</p>
+        <p class="h-add">{{i.hotel_address}}.<br>{{ i.distfromap }} KM from nearest airport.</p>
+        <p class="h-price">{{ price }}*</p>
+        <p class="h-pricex">/night</p>
+        <p class="h-am">{{ i.amenities}}</p>
+        <div class="h-rate">
+        {% with ''|center:i.hotel_rating as range %}
+          {% for _ in range %}
+              ★
+          {% endfor %}
+        {% endwith %}
+        </div>
+      </div>
+    </div>
+<br><br>
+<a href="/concanhotel/{{ i.hotel_name }}/{{ date }}/{{ room }}" class="btn btn-primary">C A N C E L</a>
+{% endfor %}
+{% endblock %}

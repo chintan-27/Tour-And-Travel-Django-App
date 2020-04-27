@@ -1,0 +1,147 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="fp">
+<div class="container form">
+  <h1 class="tr">PACKAGES</h1>
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 shadow-lg p-3 mb-5 bg-white rounded">
+  <form class="form-group" action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button class="btn btn-primary">SEARCH</button>
+  </form></div>
+  <div class="col-md-3"></div>
+</div>
+</div>
+<div class="fo shadow-lg p-5 rounded">
+  <p class="fot">Your Flight Options</p>
+{% for k in allflights %}
+<p><ion-icon name="airplane-outline"></ion-icon>&nbsp&nbsp&nbsp{{k.flight_num}}</p>
+{% endfor %}
+</div>
+<div class="ho shadow-lg p-5 rounded">
+  <p class="hot">Your Hotels Options</p>
+  {% for l in allhotels %}
+  <p ><ion-icon name="bed-outline"></ion-icon>&nbsp&nbsp&nbsp{{l.hotel_name}}</p>
+  {% endfor %}
+</div>
+</div>
+
+<br><br><br><br><br><br><br>
+<h1 class="t">&nbsp&nbspFLIGHT</h1>
+  <br><br>
+{% for i in Flights %}
+
+{% ifequal flavailability "available" %}
+<div class="container">
+    <h1 class="hhh">BOOK</h1>
+  <div class="ticket shadow-lg p-3 mb-5">
+    <div class="row bg1">
+      <h3>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ i.company }}-</h3><h4>{{i.flight_num}}</h4>
+    </div>
+    <div class="row bg1">
+      <p class="seatrem">Availability: {{seatrem}}</p>
+    <p class="from">FROM: <br>{{ i.source }} </p>
+    <p class="to">TO:<br>{{i.destination}}</p>
+    <p class="dept">DEPT TIME:<br> {{ i.dept_time}}</p>
+    <p class="dest">DEST TIME: <br>{{ i.dest_time}}</p>
+    <p class="eprice">{{pricef}}*</p>
+    </div>
+  </div>
+</div>
+{% endifequal %}
+{% ifequal flavailability "unavailable" %}
+<div class="container">
+    <h1 class="hhhh">BOOKED</h1>
+  <div class="ticket shadow-lg p-3 mb-5">
+    <div class="row bg2">
+      <h3>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ i.company }}-</h3><h4>{{i.flight_num}}</h4>
+    </div>
+    <div class="row bg1">
+      <p class="seatrem">Availability: {{seatrem}}</p>
+    <p class="from">FROM: <br>{{ i.source }} </p>
+    <p class="to">TO:<br>{{i.destination}}</p>
+    <p class="dept">DEPT TIME:<br> {{ i.dept_time}}</p>
+    <p class="dest">DEST TIME: <br>{{ i.dest_time}}</p>
+    <p class="eprice">{{pricef}}*</p>
+    </div>
+  </div>
+</div>
+{% endifequal %}
+{% endfor %}
+<br><br><br><br>
+
+
+<h1 class="t">&nbsp&nbsp&nbspHOTEL</h1>
+{% for j in Hotels %}
+
+<div class="hotel">
+  <div class="container">
+    {% ifequal havailability "available" %}
+    <div class="row shadow-lg p-3 mt-5 mb-5 rounded">
+      <div class="col-md-4 ">
+        <img class="h-img shadow-lg" src="/media/{{ j.image1 }}" alt="image">
+      </div>
+      <div class="col-md-8">
+        <p class="roomrem">Available Rooms: {{ roomrem }}</p>
+        <p class="h-name">{{j.hotel_name}}</p>
+        <p class="h-add">{{j.hotel_address}}.<br>{{ j.distfromap }} KM from nearest airport.</p>
+        <p class="h-price">{{ priceh }}*</p>
+        <p class="h-pricex">/night</p>
+        <p class="h-am">{{ j.amenities}}</p>
+        <div class="h-rate">
+        {% with ''|center:j.hotel_rating as range %}
+          {% for _ in range %}
+              ★
+          {% endfor %}
+        {% endwith %}
+        </div>
+      </div>
+    </div>
+    {% endifequal %}
+    {% ifequal havailability "unavailable" %}
+    <h1 class="fffu">BOOKED</h1>
+    <div class="row shadow-lg p-3 mt-5 mb-5 rounded">
+      <div class="col-md-4 ">
+        <img class="h-img shadow-lg" src="/media/{{ j.image1 }}" alt="image">
+      </div>
+      <div class="col-md-8">
+        <p class="roomremu">Available Rooms: {{ roomrem }}</p>
+        <p class="h-name">{{j.hotel_name}}</p>
+        <p class="h-add">{{j.hotel_address}}.<br>{{ j.distfromap }} KM from nearest airport.</p>
+        <p class="h-price">{{ priceh }}*</p>
+        <p class="h-pricex">/night</p>
+        <p class="h-am">{{ j.amenities}}</p>
+        <div class="h-rate">
+        {% with ''|center:j.hotel_rating as range %}
+          {% for _ in range %}
+              ★
+          {% endfor %}
+        {% endwith %}
+        </div>
+      </div>
+    </div>
+    {% endifequal %}
+  </div>
+  </div>
+
+{% endfor %}<br>
+
+{% for i in Flights %}
+{% for j in Hotels %}
+{% ifequal flavailability "available" %}
+{% ifequal havailability "available" %}
+<a class="btn btn-primary" href="/userpackage/{{ i.flight_num }}/{{ j.hotel_name }}/{{ date }}/{{roomreq}}/{{seatsreq}}">C O N F I R M</a>
+<br><br>&nbsp&nbsp&nbsp&nbsp&nbsp<a href="{{request.META.HTTP_REFERER}}" class="btn btn-primary">Go back</a>
+{% endifequal %}
+{% endifequal %}
+{% ifequal flavailability "unavailable" %}
+{% ifequal havailability "unavailable" %}
+<a href="{{request.META.HTTP_REFERER}}" class="btn btn-primary">Go back</a>
+{% endifequal %}
+{% endifequal %}
+{% endfor %}
+{% endfor %}
+<br><br><br>
+{% endblock %}
